@@ -18,7 +18,7 @@
                 background-size: cover;
             }
             footer{
-                background: #A67788;
+                background: #2E86C1 ;
             }
         </style>
         <title>Paula Luque</title>
@@ -51,10 +51,6 @@
             </div>
         </header>
         <!--Los símbolos en este SVG escondido serán reutilizados más abajo-->
-       
-
-
-
 
 
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -88,23 +84,23 @@
                 <div class="row gx-5">
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h2 class="h4 fw-bolder">
-                            <svg class="me-1 mb-1" width="1em" height="1em" fill="#FF69B4"><use href="#cero"></use></svg> Editorial
+                            <svg class="me-1 mb-1" width="1em" height="1em" fill="#2E86C1"><use href="#cero"></use></svg> Editorial
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id ipsum at est venenatis vulputate et eu nibh. Curabitur quis orci in tellus tempus semper.</p>
+                        <p>Con habilidad magistral en el diseño editorial, destaco por mi creatividad excepcional y atención meticulosa a la estética, garantizando proyectos visuales impactantes y funcionales.</p>
                         <small>#Editorial</small>
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h2 class="h4 fw-bolder">
-                            <svg class="me-1 mb-1" width="1em" height="1em" fill="#FF69B4"><use href="#uno"></use></svg> Interacciones
+                            <svg class="me-1 mb-1" width="1em" height="1em" fill="#2E86C1"><use href="#uno"></use></svg> Interacciones
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id ipsum at est venenatis vulputate et eu nibh. Curabitur quis orci in tellus tempus semper.</p>
+                        <p>Experta en diseño de interacciones, fusiono de manera única la usabilidad intuitiva con una estética cautivadora, creando experiencias digitales que destacan por su elegancia y eficacia.</p>
                         <small>#Interaction</small>
                     </div>
                     <div class="col-lg-4">
                         <h2 class="h4 fw-bolder">
-                            <svg class="me-1 mb-1" width="1em" height="1em" fill="#FF69B4"><use href="#dos"></use></svg> Indumentaria
+                            <svg class="me-1 mb-1" width="1em" height="1em" fill="#2E86C1"><use href="#dos"></use></svg> Indumentaria
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id ipsum at est venenatis vulputate et eu nibh. Curabitur quis orci in tellus tempus semper.</p>
+                        <p>En el mundo del diseño de indumentaria, mi destreza se traduce en la creación de prendas innovadoras que fusionan estilo y comodidad, reflejando una visión vanguardista y un compromiso con la expresión personal a través de la moda.</p>
                         <small>#Fashion</small>
                     </div>
                 </div>
@@ -128,7 +124,7 @@
                         <!-- Primer comentario-->
                         <div class="card mb-4 shadow-sm">
                             <div class="card-body p-4">
-                                <p class="mb-1">😱 ¡¡¡Sus trabajos me dejaron en shock!!!.</p>
+                                <p class="mb-1">😱 ¡¡¡Sus trabajos me dejaron en shock!!!</p>
                                 <div class="small text-muted text-end">— Juan Miguel de Los Ángeles</div>
                             </div>
                         </div>
@@ -162,7 +158,7 @@
                         <div class="card h-100 shadow-sm">
                             <div class="card-body text-center">                        
                                 <h3 class="m-0 fs-5"><span class="fs-1">📍</span><br/>Dirección</h4>
-                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                                <div class="small text-black-50">El Comendador 1916, Santiago CL</div>
                             </div>
                         </div>
                     </div>
@@ -178,7 +174,7 @@
                         <div class="card h-100 shadow-sm">
                             <div class="card-body text-center">
                                 <h3 class="m-0 fs-5"><span class="fs-1">📱</span><br/>Teléfono</h4>
-                                <div class="small text-black-50">+56 9 9856 3507</div>
+                                <div class="small text-black-50">+56 9 9556 3509</div>
                             </div>
                         </div>
                     </div>
@@ -192,24 +188,11 @@
         <!-- Lo que sigue es JavaScript a secas-->
         <script>
             async function portfolio() {
-                const consulta = await fetch("https://raw.githubusercontent.com/profesorfaco/dno037-2023-1/main/clase-07/datos.json");
+                const consulta = await fetch("https://raw.githubusercontent.com/paulaluquej/clase_11/main/datos");
                 const data = await consulta.json();
                 var donde = document.querySelector("#trabajos");
                 data.forEach(function (t, i) {
-                    donde.innerHTML +=
-                        '<article class="col"><div class="card h-100 shadow-sm ' +
-                        t.soporte +
-                        '"><img src="' +
-                        t.fotos[0] +
-                        '" class="card-img-top"><div class="card-body"><h3 class="fs-5"><a href="single.html?nro=' +
-                        i +
-                        '" class="link-secondary">' +
-                        t.nombre +
-                        "</a></h3><p>" +
-                        t.abstract +
-                        "</p><small>#" +
-                        t.soporte +
-                        "</small></div></div></article>";
+                    donde.innerHTML += `<article class="col"><div class="card h-100 shadow-sm ${t.soporte}"><img src="${t.fotos[0]}" class="card-img-top"><div class="card-body"><h3 class="fs-5"><a href="single.html?nro=${i}" class="link-secondary">${t.nombre}</a></h3><p>${t.abstract}</p><small>#${t.soporte}</small></div></div></article>`;
                 });
             }
             portfolio().catch((error) => console.error(error));
